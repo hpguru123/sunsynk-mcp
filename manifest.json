@@ -1,0 +1,97 @@
+{
+  "manifest_version": "0.3",
+  "name": "sunsynk",
+  "display_name": "Sunsynk Solar",
+  "version": "1.0.0",
+  "description": "Read-only access to your Sunsynk Connect solar, battery and grid data.",
+  "long_description": "Lets Claude read live and historical data from your Sunsynk inverter via the Sunsynk Connect cloud API (the same service the Sunsynk Connect app uses): solar generation, battery state of charge, grid import/export, household load, energy history and inverter settings. All tools are read-only; nothing is changed on the inverter. Your credentials are stored by Claude Desktop in your operating system's secure store and are only sent to api.sunsynk.net.",
+  "author": {
+    "name": "Derek Whigham",
+    "url": "https://github.com/hpguru123"
+  },
+  "icon": "icon.png",
+  "keywords": [
+    "sunsynk",
+    "solar",
+    "inverter",
+    "battery",
+    "energy"
+  ],
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "SUNSYNK_USERNAME": "${user_config.username}",
+        "SUNSYNK_PASSWORD": "${user_config.password}",
+        "TZ": "Europe/London"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "sunsynk_list_plants",
+      "description": "List plants/sites with current PV power and generation totals"
+    },
+    {
+      "name": "sunsynk_list_inverters",
+      "description": "List inverters with serial numbers, firmware and status"
+    },
+    {
+      "name": "sunsynk_live_status",
+      "description": "Live solar, battery, grid, load and output snapshot"
+    },
+    {
+      "name": "sunsynk_power_flow",
+      "description": "Current plant power-flow diagram data"
+    },
+    {
+      "name": "sunsynk_energy_history",
+      "description": "Day/month/year/total energy history"
+    },
+    {
+      "name": "sunsynk_inverter_settings",
+      "description": "Read the inverter's configuration (work mode, time-of-use, battery limits)"
+    },
+    {
+      "name": "sunsynk_api_get",
+      "description": "Read-only GET against any Sunsynk api/v1 endpoint"
+    }
+  ],
+  "user_config": {
+    "username": {
+      "type": "string",
+      "title": "Sunsynk Connect email",
+      "description": "The email you use to sign in to the Sunsynk Connect app / sunsynk.net",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "title": "Sunsynk Connect password",
+      "description": "Stored securely by Claude Desktop; only sent to api.sunsynk.net",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hpguru123/sunsynk-mcp"
+  },
+  "homepage": "https://github.com/hpguru123/sunsynk-mcp",
+  "support": "https://github.com/hpguru123/sunsynk-mcp/issues"
+}

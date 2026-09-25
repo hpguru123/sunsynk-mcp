@@ -1,0 +1,40 @@
+{
+  "name": "sunsynk-mcp",
+  "version": "1.0.0",
+  "description": "Unofficial read-only MCP server for Sunsynk Connect solar, battery and grid data",
+  "type": "module",
+  "main": "server/index.js",
+  "bin": {
+    "sunsynk-mcp": "server/index.js"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "pack": "npx -y @anthropic-ai/mcpb pack . sunsynk.mcpb"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "sunsynk",
+    "solar",
+    "inverter",
+    "battery"
+  ],
+  "author": "Derek Whigham",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.6.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpguru123/sunsynk-mcp.git"
+  },
+  "homepage": "https://github.com/hpguru123/sunsynk-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/hpguru123/sunsynk-mcp/issues"
+  }
+}

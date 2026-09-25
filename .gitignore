@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output - the .mcpb bundle is published on the Releases page, not committed
+*.mcpb
+dist/
+
+# Secrets - never commit credentials
+.env
+.env.*
+claude_desktop_config.json
+
+# Logs and OS clutter
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
