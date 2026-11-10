@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "sunsynk",
   "display_name": "Sunsynk Solar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read-only access to your Sunsynk Connect solar, battery and grid data.",
   "long_description": "Lets Claude read live and historical data from your Sunsynk inverter via the Sunsynk Connect cloud API (the same service the Sunsynk Connect app uses): solar generation, battery state of charge, grid import/export, household load, energy history and inverter settings. All tools are read-only; nothing is changed on the inverter. Your credentials are stored by Claude Desktop in your operating system's secure store and are only sent to api.sunsynk.net.",
   "author": {
