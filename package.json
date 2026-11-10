@@ -1,6 +1,6 @@
 {
   "name": "sunsynk-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unofficial read-only MCP server for Sunsynk Connect solar, battery and grid data",
   "type": "module",
   "main": "server/index.js",
@@ -26,8 +26,8 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "zod": "^4.6.5"
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
   },
   "repository": {
     "type": "git",

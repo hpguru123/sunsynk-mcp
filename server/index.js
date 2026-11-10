@@ -156,7 +156,7 @@ const wrap = (fn) => async (args) => { try { return ok(await fn(args ?? {})); } 
 // MCP server + tools (all read-only)
 // ---------------------------------------------------------------------------
 
-const server = new McpServer({ name: "sunsynk", version: "1.0.0" });
+const server = new McpServer({ name: "sunsynk", version: "1.0.1" });
 const RO = { readOnlyHint: true, openWorldHint: true };
 
 server.registerTool(
